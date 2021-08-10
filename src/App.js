@@ -5,6 +5,8 @@ import Products from './components/Shop/Products';
 
 function App() {
   const cartDisplay = useSelector(state=> state.ui.cartDisplay);
+  const cart = useSelector(state=> state.cart)
+  console.log(cart)
   return (
     <Layout>
       {cartDisplay && <Cart />}

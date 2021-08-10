@@ -6,9 +6,15 @@ import CartItem from './CartItem';
 
 const Cart = (props) => {
   const cartItems = useSelector(state=> state.cart.items);
+  const totalCartPrice = useSelector(state=> state.cart.totalAmount);
+  
+
   return (
     <Card className={classes.cart}>
-      <h2>Your Shopping Cart</h2>
+      <span style={{display: 'inline'}}>
+        <h2>Your Shopping Cart</h2>
+        {cartItems.length > 0 ? <h4>Total Price: ${totalCartPrice}</h4> : ' '}
+      </span>
       <ul>
 
       {cartItems.length > 0 
